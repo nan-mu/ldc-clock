@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["nan-mu <mu.nan.11@outlook.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
+build = "build.rs"
 
 [dependencies]
 esp-backtrace = { version = "0.11.0", features = [
@@ -19,6 +20,8 @@ esp-alloc = { version = "0.3.0" }
 embedded-hal-bus = "0.1.0"
 st7735-lcd = "0.10.0"
 embedded-graphics = "0.8.1"
+critical-section = "1.1.2"
+embedded-hal = "1.0.0"
 [profile.dev]
 # Rust debug is too slow. 
 # For debug builds always builds with some optimization
@@ -32,3 +35,6 @@ incremental = false
 lto = 'fat'
 opt-level = 's'
 overflow-checks = false
+
+[build-dependencies]
+chrono = "0.4.38"
