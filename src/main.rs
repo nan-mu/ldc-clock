@@ -81,7 +81,7 @@ fn main() -> ! {
     let cs = io.pins.gpio7.into_push_pull_output();
     let spi = esp_hal::spi::master::Spi::new(
         peripherals.SPI2,
-        100u32.kHz(),
+        1000u32.kHz(),
         esp_hal::spi::SpiMode::Mode0,
         &clocks,
     )
